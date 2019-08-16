@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { Button, Form, FormGroup, Input, Label} from 'reactstrap';
+import axios from 'axios';
 
 import './App.css';
+import { async } from 'q';
 
 class App extends Component {
   constructor() {
@@ -12,6 +14,7 @@ class App extends Component {
       message:'',
     }
     this.handelChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange = e  => {
@@ -19,10 +22,16 @@ class App extends Component {
 
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault()
 
     const { name, email, message} = this.state
+
+    const form = await axios.post('/api/form', {
+      name,
+      email,
+      message,
+    })
   }
 
   render (){
@@ -31,7 +40,7 @@ class App extends Component {
       <header className="App-header">
         <h2>Nodemailer Spike 2.0</h2>
         <br/>
-        <Form onSubmin={this.handleSubmit} style={{ width: '500px'}}>
+        <Form onSubmit={this.handleSubmit} style={{ width: '500px'}}>
           <FormGroup>
             <Label>Name: </Label>
             <Input
