@@ -19,13 +19,19 @@ class App extends Component {
 
   }
 
+  handleSubmit(e) {
+    e.preventDefault()
+
+    const { name, email, message} = this.state
+  }
+
   render (){
   return (
     <div className="App">
       <header className="App-header">
         <h2>Nodemailer Spike 2.0</h2>
         <br/>
-        <Form style={{ width: '500px'}}>
+        <Form onSubmin={this.handleSubmit} style={{ width: '500px'}}>
           <FormGroup>
             <Label>Name: </Label>
             <Input
