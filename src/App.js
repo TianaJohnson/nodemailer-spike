@@ -4,6 +4,20 @@ import { Button, Form, FormGroup, Input, Label} from 'reactstrap';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      name:'',
+      email:'',
+      message:'',
+    }
+    this.handelChange = this.handleChange.bind(this)
+  }
+
+  handleChange = e  => {
+    this.setState({[e.target.name]: e.target.value})
+
+  }
 
   render (){
   return (
@@ -17,7 +31,7 @@ class App extends Component {
             <Input
             type="text"
             name="name"
-            // onChange={this.handleChange}
+            onChange={this.handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -25,7 +39,7 @@ class App extends Component {
             <Input
             type="text"
             name="email"
-            // onChange={this.handleChange}
+            onChange={this.handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -33,7 +47,7 @@ class App extends Component {
             <Input
             type="text"
             name="message"
-            // onChange={this.handleChange}
+            onChange={this.handleChange}
             />
           </FormGroup>
           <Button>Submit!</Button>
