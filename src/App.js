@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Button, Form, FormGroup, Input, Label} from 'reactstrap';
 
 import './App.css';
 
-function App() {
+class App extends Component {
+
+  render (){
   return (
     <div className="App">
       <header className="App-header">
-        <Form>
+        <h2>Nodemailer Spike 2.0</h2>
+        <br/>
+        <Form style={{ width: '500px'}}>
           <FormGroup>
             <Label>Name: </Label>
             <Input
@@ -40,6 +44,7 @@ function App() {
       </header>
     </div>
   );
+}
 }
 
 export default App;
