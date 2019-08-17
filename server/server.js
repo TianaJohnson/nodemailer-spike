@@ -1,7 +1,7 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -38,6 +38,9 @@ app.post('/api/form', (req,res) =>{
             if (err) {
                 return console.log(err)
             }
+
+            console.log('message sent: %s', info.message)
+            console.log('Message URL: %s', nodemailer.getTestMessageUrl(info))
         })
    })
 })

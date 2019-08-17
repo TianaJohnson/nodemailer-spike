@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Input, Label} from 'reactstrap';
 import axios from 'axios';
 
 import './App.css';
-import { async } from 'q';
+// import { async } from 'q';
 
 class App extends Component {
   constructor() {
