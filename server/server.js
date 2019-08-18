@@ -27,6 +27,8 @@ app.post('/api/form', (req,res) =>{
         });
 // test account information
 // no to figure out real information
+
+//oAuth for gmail
         let mailOptions = {
             from: 'test@testaccount.com',
             to: 'elda.leannon@ethereal.email',
