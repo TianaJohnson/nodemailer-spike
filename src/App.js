@@ -17,13 +17,16 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+
   handleChange = e  => {
     this.setState({[e.target.name]: e.target.value})
 
   }
 
   async handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
+    e.target.reset();
+    // ^This resets the form!!!
 
     const { name, email, message} = this.state
 
@@ -33,6 +36,8 @@ class App extends Component {
       message,
     })
   }
+
+  
 
   render (){
   return (

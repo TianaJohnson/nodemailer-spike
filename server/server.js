@@ -21,8 +21,8 @@ app.post('/api/form', (req,res) =>{
             host: 'smtp.ethereal.email',
             port: 587,
             auth: {
-                user: 'elda.leannon@ethereal.email',
-                pass: 'nqMpurP1ADFzvk4epR'
+                user: 'clement.deckow9@ethereal.email',
+                pass: '7qZRf6y9f5Ge2PmFvP'
             }
         });
 // test account information
@@ -31,7 +31,7 @@ app.post('/api/form', (req,res) =>{
 //oAuth for gmail
         let mailOptions = {
             from: 'test@testaccount.com',
-            to: 'elda.leannon@ethereal.email',
+            to: 'clement.deckow9@ethereal.email',
             replyTo: 'test@testaccount.com',
             subject: 'new message',
             text: req.body.message,
